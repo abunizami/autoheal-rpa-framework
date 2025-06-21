@@ -1,53 +1,49 @@
 # Autoheal RPA Project Documentation
 
-## RPA Implementation for Remediation
-
 Implementation of an Autoheal solution leveraging RPA bots, ServiceNow, and Azure Monitor to remediate routine issues on Windows and Linux servers.
 
 🧭 Business Requirement Summary
 The organization requires an automated remediation framework that:
-Detects and resolves routine infrastructure issues on Windows and Linux servers.
-Integrates with ServiceNow for incident management and escalation.
-Leverages Azure Monitor for real-time telemetry and alerting.
-Engages support engineers when automated remediation fails.
+- Detects and resolves routine infrastructure issues on Windows and Linux servers.
+- Integrates with ServiceNow for incident management and escalation.
+- Leverages Azure Monitor for real-time telemetry and alerting.
+- Engages support engineers when automated remediation fails.
 
 🔍 Gap Analysis
 
 🧩 Solution Design Overview
 🔗 Integration Points
-Azure Monitor / Prometheus: Detects anomalies and triggers alerts.
-ServiceNow: Receives alerts via webhook/API and creates incident tickets.
-RPA Orchestrator (UiPath / Automation Anywhere):
-Polls or receives triggers from ServiceNow.
-Executes remediation workflows on target servers.
-Updates ServiceNow tickets with diagnostics and resolution details.
+- Azure Monitor / Prometheus: Detects anomalies and triggers alerts.
+- ServiceNow: Receives alerts via webhook/API and creates incident tickets.
+- RPA Orchestrator (UiPath / Automation Anywhere):
+- Polls or receives triggers from ServiceNow.
+- Executes remediation workflows on target servers.
+- Updates ServiceNow tickets with diagnostics and resolution details.
 🔄 Autoheal Workflow
-Issue Detection: Azure Monitor detects a server issue (e.g., high CPU, service down).
-Alert Routing: Alert sent to ServiceNow via webhook or Azure Action Group.
-Incident Creation: ServiceNow logs the incident and categorizes it.
-Bot Trigger: RPA Orchestrator triggers bot based on incident type.
-Remediation Execution:
-Windows: Restart services, clear temp files, kill hung processes.
-Linux: Restart daemons, rotate logs, free disk space.
-Ticket Update: Bot posts diagnostics, actions taken, and resolution status.
-Escalation Logic: If issue persists, ticket is escalated to support engineer.
+- Issue Detection: Azure Monitor detects a server issue (e.g., high CPU, service down).
+- Alert Routing: Alert sent to ServiceNow via webhook or Azure Action Group.
+- Incident Creation: ServiceNow logs the incident and categorizes it.
+- Bot Trigger: RPA Orchestrator triggers bot based on incident type.
+- Remediation Execution:
+- Windows: Restart services, clear temp files, kill hung processes.
+- Linux: Restart daemons, rotate logs, free disk space.
+- Ticket Update: Bot posts diagnostics, actions taken, and resolution status.
+- Escalation Logic: If issue persists, ticket is escalated to support engineer.
 
 🖥️ Physical Network Blueprint
-Monitoring Layer: Azure Monitor, Prometheus agents on servers.
-Integration Layer: Azure Event Grid / Logic Apps → ServiceNow API.
-Automation Layer: RPA Orchestrator hosted in secure subnet.
-Execution Layer: RPA bots with access to Windows/Linux servers via WinRM/SSH.
-ServiceNow MID Server (optional): For secure internal communication.
+- Monitoring Layer: Azure Monitor, Prometheus agents on servers.
+- Integration Layer: Azure Event Grid / Logic Apps → ServiceNow API.
+- Automation Layer: RPA Orchestrator hosted in secure subnet.
+- Execution Layer: RPA bots with access to Windows/Linux servers via WinRM/SSH.
+- ServiceNow MID Server (optional): For secure internal communication.
 
 🔌 Interface Definitions
 
 🚀 Deployment Blueprint
-Environment: Hybrid cloud (Azure + on-prem)
-Security: Role-based access, encrypted credentials, audit logging
-Scalability: Horizontal scaling of bots based on ticket volume
-Monitoring: Bot health, execution logs, ticket resolution metrics
-
-## Autoheal Deployment Checklist and Interface Specification
+- Environment: Hybrid cloud (Azure + on-prem)
+- Security: Role-based access, encrypted credentials, audit logging
+- Scalability: Horizontal scaling of bots based on ticket volume
+- Monitoring: Bot health, execution logs, ticket resolution metrics
 
 Autoheal Solution Deployment Checklist and Interface Specification
 Deployment Checklist
