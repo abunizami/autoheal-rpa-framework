@@ -20,7 +20,7 @@ The solution integrates:
 Autoheal Solution Deployment Checklist and Interface Specification
 Deployment Checklist
 Environment Setup
-☐ Provision RPA Orchestrator (e.g., UiPath, Automation Anywhere)\n
+☐ Provision RPA Orchestrator (e.g., UiPath, Automation Anywhere)
 ☐ Ensure network connectivity between RPA bots and target servers (Windows/Linux)
 ☐ Install and configure ServiceNow MID Server (if required)
 ☐ Ensure Azure Monitor and/or Prometheus agents are installed on all servers
