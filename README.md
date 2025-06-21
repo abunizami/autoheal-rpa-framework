@@ -142,18 +142,21 @@ Escalation Handling
 - Authentication: OAuth2 or Shared Secret
 - Data Format: JSON
 - Payload Example: {"alertName": "HighCPU", "resource": "Server01", "severity": "Critical"}
+  
 - ServiceNow to RPA Orchestrator
 - Protocol: REST API or Queue Trigger
 - Direction: Outbound from ServiceNow
 - Authentication: API Key or OAuth2
 - Data Format: JSON
 - Payload Example: {"incidentId": "INC0012345", "category": "CPU", "server": "Server01"}
+
 - RPA Bot to Target Server
 - Protocol: WinRM (Windows) / SSH (Linux)
 - Direction: Bidirectional
 - Authentication: Kerberos / SSH Key / Password
 - Data Format: Command Execution
 - Payload Example: Restart-Service -Name "Spooler" (Windows), systemctl restart apache2 (Linux)
+
 - RPA Bot to ServiceNow
 - Protocol: REST API
 - Direction: Outbound from RPA Bot
